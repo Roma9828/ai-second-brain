@@ -2,7 +2,10 @@ import streamlit as st
 from groq import Groq
 from pypdf import PdfReader
 
-client = Groq(api_key="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")
+import os
+from groq import Groq
+
+client = Groq(api_key=os.environ["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"])
 
 st.set_page_config(page_title="AI Second Brain", layout="wide")
 
