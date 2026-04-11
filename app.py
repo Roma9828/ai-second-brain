@@ -9,7 +9,7 @@ client = Groq(api_key=os.environ["GROQ_API_KEY"])
 # Page config
 st.set_page_config(page_title="AI Second Brain", layout="wide")
 
-st.title("🧠 AI Second Brain (Final Year Project)")
+st.title("🧠 AI Second Brain")
 
 # Session state
 if "chat" not in st.session_state:
