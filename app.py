@@ -49,7 +49,7 @@ def main_app():
     # ---------------- HOME ---------------- #
     if menu == "Home":
 
-        st.title("🤖 Ask Your PDF")
+        st.title("🤖 My AII Assistent")
 
         uploaded_file = st.file_uploader("📄 Upload PDF", type="pdf")
 
