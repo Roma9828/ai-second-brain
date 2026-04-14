@@ -1,20 +1,8 @@
 import streamlit as st
-import os
 from groq import Groq
 from pypdf import PdfReader
-from dotenv import load_dotenv
 
-# Load environment variables (for local use)
-load_dotenv()
-
-# Safe API key handling
-api_key = os.getenv("GROQ_API_KEY")
-
-if not api_key:
-    st.error("❌ API Key not found! Please set GROQ_API_KEY in environment or Streamlit secrets.")
-    st.stop()
-
-client = Groq(api_key=api_key)
+client = Groq(api_key="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")
 
 st.set_page_config(page_title="AI Second Brain", layout="wide")
 
@@ -60,7 +48,7 @@ def main_app():
     # ---------------- HOME ---------------- #
     if menu == "Home":
 
-        st.title("🤖 MY AI ASSISTANT")
+        st.title("🤖 MY AI ASSISTENT")
 
         uploaded_file = st.file_uploader("📄 Upload PDF", type="pdf")
 
@@ -85,7 +73,7 @@ def main_app():
                 messages=[
                     {
                         "role": "system",
-                        "content": "Answer ONLY from the given PDF context. If not found, say 'Not in PDF'."
+                        "content": "You are an AI assistant. Answer only from the given PDF context."
                     },
                     {
                         "role": "user",
@@ -111,6 +99,7 @@ def main_app():
 
             else:
                 st.warning("⚠️ Upload PDF and ask a question!")
+
 
     # ---------------- HISTORY ---------------- #
     elif menu == "History":
